@@ -2,11 +2,20 @@ version: "3.9"
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      args:
+        INSTALL_XDEBUG: ${INSTALL_XDEBUG:-false}
+        APP_ENV: ${APP_ENV:-production}
     ports:
       - "8000:8000"
     env_file:
       - .env
+    environment:
+      XDEBUG_MODE: ${XDEBUG_MODE:-off}
+      XDEBUG_START_WITH_REQUEST: ${XDEBUG_START_WITH_REQUEST:-yes}
+      XDEBUG_CLIENT_HOST: ${XDEBUG_CLIENT_HOST:-host.docker.internal}
+      XDEBUG_CLIENT_PORT: ${XDEBUG_CLIENT_PORT:-9003}
     volumes:
       - ./:/var/www/html
     depends_on:
