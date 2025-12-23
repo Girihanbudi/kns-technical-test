@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/ping', function () {
-    return response()->json([
-        'message' => 'pong',
-    ]);
-});
+require __DIR__.'/api/_ping.php';
+require __DIR__.'/api/auth.php';
+require __DIR__.'/api/user.php';
