@@ -1,0 +1,15 @@
+node_modules
+node_modules.frontend
+vendor
+storage/logs
+storage/framework/cache/data
+storage/framework/sessions
+storage/framework/views
+.git
+.gitignore
+.env
+*.sqlite
+composer.lock
+phpunit.result.cache
+.phpunit.cache
+.DS_Store
